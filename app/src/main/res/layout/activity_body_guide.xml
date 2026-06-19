@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121214">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🛡️ Body Safety Guide"
+            android:textColor="#FF4D4D"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btnHead"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🧠 Head Safety"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnFire"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🔥 Fire Safety"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnRoad"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🚦 Road Safety"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnWater"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🌊 Water Safety"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

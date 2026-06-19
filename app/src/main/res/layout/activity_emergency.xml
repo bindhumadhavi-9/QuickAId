@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121214">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emergency Situations"
+            android:textColor="#FF4D4D"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:id="@+id/btnAccident"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🚗 Road Accident"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnBurns"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🔥 Burns"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnBleeding"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🩸 Bleeding"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnElectric"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="⚡ Electric Shock"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnChoking"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="😮 Choking"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:id="@+id/btnFracture"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🦴 Fracture"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

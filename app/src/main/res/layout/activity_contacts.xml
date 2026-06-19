@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121214">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📞 Emergency Contacts"
+            android:textColor="#FF4D4D"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🚑 Ambulance - 108"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="👮 Police - 100"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🔥 Fire Service - 101"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="👩 Women Helpline - 1091"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="🧒 Child Helpline - 1098"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#121214"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginTop="18dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

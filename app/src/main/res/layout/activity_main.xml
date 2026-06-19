@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#121214"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QuickAid"
+        android:textSize="52sp"
+        android:textStyle="bold"
+        android:textColor="#FF4D4D"
+        android:layout_marginBottom="40dp"/>
+
+    <Button
+        android:id="@+id/btnEmergency"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="🚨 Emergency Situations"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#121214"
+        android:backgroundTint="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/btnBodyGuide"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="🛡️ Body Safety Guide"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#121214"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="18dp"/>
+
+    <Button
+        android:id="@+id/btnTips"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="💡 Awareness Tips"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#121214"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="18dp"/>
+
+    <Button
+        android:id="@+id/btnSOS"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="📞 Emergency Contacts"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#121214"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="18dp"/>
+
+    <Button
+        android:id="@+id/btnKit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="💼 First Aid Kit"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#121214"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginTop="18dp"/>
+
+</LinearLayout>

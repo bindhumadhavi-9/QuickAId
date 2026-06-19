@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121214">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="💼 First Aid Kit"
+            android:textColor="#FF4D4D"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="✔ Bandages\n\n✔ Cotton\n\n✔ Antiseptic Liquid\n\n✔ Burn Cream\n\n✔ Pain Relief Spray\n\n✔ Thermometer\n\n✔ Gloves\n\n✔ Medical Tape\n\n✔ Scissors\n\n✔ Face Masks\n\n✔ Hand Sanitizer\n\n✔ ORS Packets\n\n✔ Paracetamol Tablets\n\n✔ Cough Tablets\n\n✔ Pain Relief Tablets\n\n✔ Ointments"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:lineSpacingExtra="10dp"/>
+
+    </LinearLayout>
+
+</ScrollView>
