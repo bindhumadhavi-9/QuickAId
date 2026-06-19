@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,76 +17,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.QuickAid">
+
+        <!-- Main Activity -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".EmergencyActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".BodyGuideActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".TipsActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ContactsActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".FirstAidKitActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".RoadActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".BurnsActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".BleedingActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ElectricShockActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".ChokingActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".FractureActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".HeadSafetyActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".FireSafetyActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".RoadSafetyActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".WaterSafetyActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Core Activities -->
+        <activity android:name=".EmergencyActivity" android:exported="false" />
+        <activity android:name=".BodyGuideActivity" android:exported="false" />
+        <activity android:name=".TipsActivity" android:exported="false" />
+        <activity android:name=".ContactsActivity" android:exported="false" />
+        <activity android:name=".FirstAidKitActivity" android:exported="false" />
+
+        <!-- New Enhanced Activities -->
+        <activity android:name=".ContactsManagerActivity" android:exported="false" />
+        <activity android:name=".BodyMapActivity" android:exported="false" />
+        <activity android:name=".BodyPartInfoActivity" android:exported="false" />
+        <activity android:name=".EnhancedEmergencyActivity" android:exported="false" />
+        <activity android:name=".DecisionTreeActivity" android:exported="false" />
+        <activity android:name=".QuizActivity" android:exported="false" />
+        <activity android:name=".AIAssistantActivity" android:exported="false" />
+        <activity android:name=".NearbyServicesActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+        <activity android:name=".PreparednessActivity" android:exported="false" />
+        <activity android:name=".PreparednessInfoActivity" android:exported="false" />
+
+        <!-- Existing Emergency Detail Activities -->
+        <activity android:name=".RoadActivity" android:exported="false" />
+        <activity android:name=".BurnsActivity" android:exported="false" />
+        <activity android:name=".BleedingActivity" android:exported="false" />
+        <activity android:name=".ElectricShockActivity" android:exported="false" />
+        <activity android:name=".ChokingActivity" android:exported="false" />
+        <activity android:name=".FractureActivity" android:exported="false" />
+        <activity android:name=".HeadSafetyActivity" android:exported="false" />
+        <activity android:name=".FireSafetyActivity" android:exported="false" />
+        <activity android:name=".RoadSafetyActivity" android:exported="false" />
+        <activity android:name=".WaterSafetyActivity" android:exported="false" />
     </application>
 
 </manifest>

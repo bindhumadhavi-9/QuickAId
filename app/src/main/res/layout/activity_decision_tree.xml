@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textViewQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="32dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonYes"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="YES"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/safe_green"
+                android:backgroundTint="@color/safe_green"
+                android:layout_marginBottom="12dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonNo"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="NO"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/emergency_red"
+                android:backgroundTint="@color/emergency_red"/>
+
+        </RadioGroup>
+
+        <View android:layout_width="0dp" android:layout_height="24dp"/>
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Next"
+            android:textSize="18sp"
+            android:backgroundTint="@color/info_blue"/>
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Over"
+            android:backgroundTint="@color/text_secondary"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/textViewWarning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/emergency_red"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="16dp"
+            android:background="@color/card_background"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:visibility="gone"
+            android:lineSpacingExtra="8dp"
+            android:background="@color/card_background"
+            android:padding="16dp"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Disclaimer: This guide does not replace professional medical advice. When in doubt, always call 112."
+            android:textSize="11sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

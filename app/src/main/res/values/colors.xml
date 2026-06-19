@@ -1,5 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Primary Colors -->
+    <color name="primary">#FF4D4D</color>
+    <color name="primary_dark">#121214</color>
+    <color name="primary_light">#FF6B6B</color>
+    <color name="primary_variant">#CC3D3D</color>
+
+    <!-- Emergency Colors -->
+    <color name="emergency_red">#FF4444</color>
+    <color name="sos_red">#E53935</color>
+    <color name="warning_orange">#FF9800</color>
+    <color name="alert_yellow">#FFC107</color>
+    <color name="safe_green">#4CAF50</color>
+    <color name="info_blue">#2196F3</color>
+
+    <!-- Background Colors -->
+    <color name="background_dark">#121214</color>
+    <color name="background_card">#1E1E22</color>
+    <color name="background_elevated">#2A2A2E</color>
+    <color name="card_background">#1E1E22</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_disabled">#666666</color>
+    <color name="text_dark">#121214</color>
+
+    <!-- Accent Colors -->
+    <color name="accent">#FF4D4D</color>
+    <color name="accent_light">#FF7A7A</color>
+
+    <!-- Status Colors -->
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="error">#F44336</color>
+    <color name="info">#2196F3</color>
+
+    <!-- Severity Colors -->
+    <color name="severity_low">#4CAF50</color>
+    <color name="severity_medium">#FF9800</color>
+    <color name="severity_high">#FF5722</color>
+    <color name="severity_critical">#D32F2F</color>
+
+    <!-- Transparent -->
+    <color name="transparent">#00000000</color>
+    <color name="translucent_dark">#80000000</color>
+    <color name="translucent_light">#40FFFFFF</color>
+
+    <!-- Legacy Support -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- High Contrast Mode -->
+    <color name="hc_background">#000000</color>
+    <color name="hc_text">#FFFF00</color>
+    <color name="hc_accent">#00FFFF</color>
 </resources>

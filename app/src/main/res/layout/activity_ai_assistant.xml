@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary_dark">
+
+    <TextView
+        android:id="@+id/textViewDisclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AI provides general guidance. This does not replace professional medical advice."
+        android:textSize="11sp"
+        android:textColor="@color/text_secondary"
+        android:background="@color/card_background"
+        android:padding="8dp"
+        android:gravity="center"/>
+
+    <ListView
+        android:id="@+id/listViewChat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:divider="@color/text_secondary"
+        android:dividerHeight="0.5dp"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Quick Emergency Questions"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:padding="8dp"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <Button
+                android:id="@+id/btnNotBreathing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Breathing?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/emergency_red"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnCloseBleeding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bleeding?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/emergency_red"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnChoking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choking?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/warning_orange"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnBurns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Burns?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/warning_orange"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnHeartAttack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Heart Attack?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/emergency_red"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/btnStroke"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stroke?"
+                android:textSize="11sp"
+                android:backgroundTint="@color/emergency_red"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/editTextQuery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Describe emergency..."
+            android:textColor="@color/white"
+            android:textColorHint="@color/text_secondary"
+            android:backgroundTint="@color/emergency_red"
+            android:maxLines="3"/>
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ask"
+            android:backgroundTint="@color/info_blue"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

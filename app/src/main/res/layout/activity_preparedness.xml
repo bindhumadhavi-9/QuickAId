@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Be Prepared for Disasters"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap to learn safety measures for each disaster type"
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnEarthquake"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="🌏 Earthquake Safety"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnFlood"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="🌊 Flood Safety"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnFire"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="🔥 Fire Safety"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnCyclone"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="🌀 Cyclone Safety"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnLightning"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="⚡ Lightning Safety"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="8dp"/>
+
+            <Button
+                android:id="@+id/btnGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="📋 General Preparedness"
+                android:textSize="16sp"
+                android:backgroundTint="@color/card_background"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remember: Being prepared can save lives. Review these guides regularly and practice emergency drills with your family."
+            android:textSize="12sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginTop="8dp"/>
+
+    </LinearLayout>
+</ScrollView>
