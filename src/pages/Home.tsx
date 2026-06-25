@@ -1,14 +1,5 @@
 import { Link } from 'react-router-dom'
-import {
-  Phone,
-  Users,
-  Accessibility,
-  Briefcase,
-  Brain,
-  Shield,
-  AlertTriangle,
-  BookOpen,
-} from 'lucide-react'
+import { Phone, Users, Accessibility, Briefcase, Brain, Shield, TriangleAlert as AlertTriangle, BookOpen } from 'lucide-react'
 
 export default function Home() {
   const quickActions = [
@@ -98,6 +89,3 @@ export default function Home() {
     </div>
   )
 }
-
-
-export default Home
