@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
 import {
   Phone,
-  MapPin,
   Users,
-  Body,
+  Accessibility,
   Briefcase,
   Brain,
   Shield,
@@ -14,7 +13,7 @@ import {
 export default function Home() {
   const quickActions = [
     { to: '/emergency', icon: AlertTriangle, label: 'SOS Emergency', color: 'bg-red-600', urgent: true },
-    { to: '/body-map', icon: Body, label: 'Body Map', color: 'bg-blue-600' },
+    { to: '/body-map', icon: Accessibility, label: 'Body Map', color: 'bg-blue-600' },
     { to: '/contacts', icon: Users, label: 'Emergency Contacts', color: 'bg-green-600' },
     { to: '/first-aid-kit', icon: Briefcase, label: 'First Aid Kit', color: 'bg-amber-600' },
   ]
@@ -99,3 +98,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+export default Home
