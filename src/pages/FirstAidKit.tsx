@@ -28,7 +28,7 @@ const defaultItems: { name: string; quantity: number }[] = [
   { name: 'First aid manual', quantity: 1 },
 ]
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = '/api';
 
 async function apiFetch(endpoint: string, options: RequestInit = {}) {
   const url = `${API_BASE_URL}${endpoint}`;

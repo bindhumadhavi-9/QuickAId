@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:3001/api';
+// Use relative path for same-origin requests
+const API_BASE_URL = '/api';
 
 // Generic fetch wrapper
 async function apiFetch(endpoint: string, options: RequestInit = {}) {

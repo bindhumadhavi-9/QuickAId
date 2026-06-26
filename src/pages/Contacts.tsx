@@ -17,7 +17,7 @@ const defaultContacts = [
   { name: 'Poison Control', phone: '1-800-222-1222', relationship: 'Emergency', is_primary: false },
 ]
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = '/api';
 
 async function apiFetch(endpoint: string, options: RequestInit = {}) {
   const url = `${API_BASE_URL}${endpoint}`;
