@@ -1,40 +1,22 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Plus, Phone, Trash2, CreditCard as Edit2, User, MessageSquare } from 'lucide-react'
+import { supabase } from '../lib/supabase'
 
 interface EmergencyContact {
-  id: number | string
+  id: string
   name: string
   phone: string
   relationship: string
-  is_primary?: boolean
+  is_primary: boolean
 }
 
 const defaultContacts = [
-  { name: 'Emergency Services', phone: '911', relationship: 'Emergency', is_primary: true },
-  { name: 'Police', phone: '911', relationship: 'Emergency', is_primary: false },
-  { name: 'Fire Department', phone: '911', relationship: 'Emergency', is_primary: false },
-  { name: 'Poison Control', phone: '1-800-222-1222', relationship: 'Emergency', is_primary: false },
+  { name: 'Emergency Services', phone: '911', relationship: 'Emergency', is_primary: true, is_default: true },
+  { name: 'Police', phone: '911', relationship: 'Emergency', is_primary: false, is_default: true },
+  { name: 'Fire Department', phone: '911', relationship: 'Emergency', is_primary: false, is_default: true },
+  { name: 'Poison Control', phone: '1-800-222-1222', relationship: 'Emergency', is_primary: false, is_default: true },
 ]
-
-const API_BASE_URL = 'http://localhost:3001/api';
-
-async function apiFetch(endpoint: string, options: RequestInit = {}) {
-  const url = `${API_BASE_URL}${endpoint}`;
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`API Error: ${response.status}`);
-  }
-
-  return response.json();
-}
 
 export default function Contacts() {
   const [contacts, setContacts] = useState<EmergencyContact[]>([])
@@ -48,7 +30,12 @@ export default function Contacts() {
 
   const loadContacts = async () => {
     try {
-      const data = await apiFetch('/contacts')
+      const { data, error } = await supabase
+        .from('emergency_contacts')
+        .select('*')
+        .order('is_primary', { ascending: false })
+
+      if (error) throw error
       setContacts(data || [])
     } catch (err) {
       console.error('Error loading contacts:', err)
@@ -61,24 +48,27 @@ export default function Contacts() {
 
     try {
       if (editingContact) {
-        await apiFetch(`/contacts/${editingContact.id}`, {
-          method: 'PUT',
-          body: JSON.stringify({
+        const { error } = await supabase
+          .from('emergency_contacts')
+          .update({
             name: formData.name,
             phone: formData.phone,
             relationship: formData.relationship,
-          }),
-        })
+          })
+          .eq('id', editingContact.id)
+
+        if (error) throw error
       } else {
-        await apiFetch('/contacts', {
-          method: 'POST',
-          body: JSON.stringify({
+        const { error } = await supabase
+          .from('emergency_contacts')
+          .insert({
             name: formData.name,
             phone: formData.phone,
             relationship: formData.relationship,
             is_primary: false,
-          }),
-        })
+          })
+
+        if (error) throw error
       }
 
       setShowAddModal(false)
@@ -90,11 +80,16 @@ export default function Contacts() {
     }
   }
 
-  const handleDelete = async (id: number | string) => {
+  const handleDelete = async (id: string) => {
     if (!confirm('Delete this contact?')) return
 
     try {
-      await apiFetch(`/contacts/${id}`, { method: 'DELETE' })
+      const { error } = await supabase
+        .from('emergency_contacts')
+        .delete()
+        .eq('id', id)
+
+      if (error) throw error
       loadContacts()
     } catch (err) {
       console.error('Error deleting contact:', err)

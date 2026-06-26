@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Plus, Check, Trash2, Edit2, Briefcase, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, Plus, Check, Trash2, CreditCard as Edit2, Briefcase, TriangleAlert as AlertTriangle } from 'lucide-react'
+import { supabase } from '../lib/supabase'
 
 interface FirstAidItem {
-  id: number | string
+  id: string
   name: string
   quantity: number
   in_stock: boolean
@@ -28,25 +29,6 @@ const defaultItems: { name: string; quantity: number }[] = [
   { name: 'First aid manual', quantity: 1 },
 ]
 
-const API_BASE_URL = 'http://localhost:3001/api';
-
-async function apiFetch(endpoint: string, options: RequestInit = {}) {
-  const url = `${API_BASE_URL}${endpoint}`;
-  const response = await fetch(url, {
-    ...options,
-    headers: {
-      'Content-Type': 'application/json',
-      ...options.headers,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`API Error: ${response.status}`);
-  }
-
-  return response.json();
-}
-
 export default function FirstAidKit() {
   const [items, setItems] = useState<FirstAidItem[]>([])
   const [showAddModal, setShowAddModal] = useState(false)
@@ -59,32 +41,42 @@ export default function FirstAidKit() {
 
   const loadItems = async () => {
     try {
-      const data = await apiFetch('/first-aid-items')
+      const { data, error } = await supabase
+        .from('first_aid_items')
+        .select('*')
+        .order('name')
+
+      if (error) throw error
 
       if (data && data.length > 0) {
         setItems(data)
       } else {
-        // Seed default items
-        for (const item of defaultItems) {
-          await apiFetch('/first-aid-items', {
-            method: 'POST',
-            body: JSON.stringify({ ...item, in_stock: true }),
-          })
+        const { error: insertError } = await supabase
+          .from('first_aid_items')
+          .insert(defaultItems.map(item => ({
+            ...item,
+            in_stock: true,
+          })))
+
+        if (!insertError) {
+          loadItems()
         }
-        loadItems()
       }
     } catch (err) {
       console.error('Error loading items:', err)
     }
   }
 
-  const toggleInStock = async (id: number | string, currentStatus: boolean) => {
+  const toggleInStock = async (id: string, currentStatus: boolean) => {
     try {
-      await apiFetch(`/first-aid-items/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify({ in_stock: !currentStatus }),
-      })
-      loadItems()
+      const { error } = await supabase
+        .from('first_aid_items')
+        .update({ in_stock: !currentStatus })
+        .eq('id', id)
+
+      if (!error) {
+        loadItems()
+      }
     } catch (err) {
       console.error('Error updating item:', err)
     }
@@ -95,24 +87,27 @@ export default function FirstAidKit() {
 
     try {
       if (editingItem) {
-        await apiFetch(`/first-aid-items/${editingItem.id}`, {
-          method: 'PUT',
-          body: JSON.stringify({
+        const { error } = await supabase
+          .from('first_aid_items')
+          .update({
             name: formData.name,
             quantity: formData.quantity,
             notes: formData.notes,
-          }),
-        })
+          })
+          .eq('id', editingItem.id)
+
+        if (error) throw error
       } else {
-        await apiFetch('/first-aid-items', {
-          method: 'POST',
-          body: JSON.stringify({
+        const { error } = await supabase
+          .from('first_aid_items')
+          .insert({
             name: formData.name,
             quantity: formData.quantity,
             notes: formData.notes,
             in_stock: true,
-          }),
-        })
+          })
+
+        if (error) throw error
       }
 
       closeModal()
@@ -122,12 +117,18 @@ export default function FirstAidKit() {
     }
   }
 
-  const handleDelete = async (id: number | string) => {
+  const handleDelete = async (id: string) => {
     if (!confirm('Delete this item?')) return
 
     try {
-      await apiFetch(`/first-aid-items/${id}`, { method: 'DELETE' })
-      loadItems()
+      const { error } = await supabase
+        .from('first_aid_items')
+        .delete()
+        .eq('id', id)
+
+      if (!error) {
+        loadItems()
+      }
     } catch (err) {
       console.error('Error deleting item:', err)
     }
@@ -180,7 +181,7 @@ export default function FirstAidKit() {
                 <Briefcase className="w-6 h-6 text-amber-600 dark:text-amber-400" />
               </div>
               <div>
-                <h3 className="font-medium text-gray-800 dark:text-gray-100">Kit Status</h3>
+                <h3 className="font-full text-gray-800 dark:text-gray-100">Kit Status</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {inStockCount} of {totalCount} items ready
                 </p>
@@ -195,7 +196,7 @@ export default function FirstAidKit() {
           <div className="mt-4 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
             <div
               className="h-full bg-green-500 transition-all"
-              style={{ width: `${totalCount > 0 ? (inStockCount / totalCount) * 100 : 0}%` }}
+              style={{ width: `${(inStockCount / totalCount) * 100}%` }}
             />
           </div>
         </div>
