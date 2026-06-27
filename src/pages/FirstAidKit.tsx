@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowLeft, Plus, Check, Trash2, Edit2, Briefcase, AlertTriangle } from 'lucide-react'
+import { ArrowLeft, Plus, Check, Trash2, CreditCard as Edit2, Briefcase, TriangleAlert as AlertTriangle } from 'lucide-react'
 
 interface FirstAidItem {
   id: number | string
